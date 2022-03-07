@@ -1,0 +1,6 @@
+.idea/
+*.o
+map
+tmp
+cmake-build-debug/
+my_sokoban
