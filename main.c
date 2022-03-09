@@ -28,7 +28,6 @@ int main(int ac, char **av, char **env)
     d->default_map = char_to_array(map);
     d->p_coord = get_player_coord(d);
     d->holes = get_holes(d);
-    d->crates = get_crates(d);
     display(d);
     manage_key(d);
     endwin();

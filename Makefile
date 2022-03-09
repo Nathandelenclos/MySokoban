@@ -7,11 +7,11 @@
 
 MAIN	=	main.c	\
 
-SRC	=		map_manager.c	\
-			manage_key.c	\
-			move_player.c	\
-			victory_loose.c	\
-			get_element.c	\
+SRC	=	map_manager.c	\
+		manage_key.c	\
+		move_player.c	\
+		victory_loose.c	\
+		get_element.c	\
 
 OBJ	=	$(MAIN:.c=.o) $(SRC:.c=.o)
 
