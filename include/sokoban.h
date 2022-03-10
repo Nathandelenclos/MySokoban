@@ -34,5 +34,6 @@ node *get_holes(data *d);
 node *get_crates(data *d);
 int victory_check(data *d);
 int loose_check(data *d);
-
+int check_char(char *map);
+int check_screen(char **tab);
 #endif

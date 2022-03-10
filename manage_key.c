@@ -12,6 +12,7 @@
 
 void manage_key(data *d)
 {
+    while (check_screen(d->map));
     int c = getch();
     move_player(d, c);
     switch (c) {

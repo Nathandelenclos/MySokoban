@@ -22,19 +22,21 @@ char *file_to_str(char *filename)
     char *data;
     int size = 0;
 
-    if (fd1 < 0 && errno == 2) {
+    if (fd1 < 0 || errno == 2) {
         my_error("File can't open");
-        return (0);
+        return NULL;
     }
     stat(filename, &st);
     data = malloc(st.st_size + 1);
     size = read(fd1, data, st.st_size);
-    if (size < 0)
+    if (size <= 0) {
         write(2, "An error occurred in the read.\n", 31);
+        return NULL;
+    }
     data[size] = '\0';
-    if (close(fd1) < 0 && errno == 2) {
+    if (close(fd1) < 0 || errno == 2) {
         my_error("File can't close");
-        return (0);
+        return NULL;
     }
     return data;
 }
@@ -70,6 +72,23 @@ void regen_map(data *d)
     for (int i = 0; d->default_map[i] != NULL; ++i)
         d->map[i] = my_strdup(d->default_map[i]);
     d->p_coord = get_player_coord(d);
+}
+
+int check_char(char *map)
+{
+    char str[2];
+    str[1]='\0';
+    for (int i = 0; map[i] != '\0'; ++i) {
+        if (map[i] != '#' && map[i] != ' ' && map[i] != 'P'
+        && map[i] != 'X' && map[i] != 'O' && map[i] != '\0' && map[i] != '\n') {
+            str[0] = map[i];
+            my_error("Invalid map: char '");
+            my_error(str);
+            my_error("' is banned.");
+            return 1;
+        }
+    }
+    return 0;
 }
 
 void display(data *d)
