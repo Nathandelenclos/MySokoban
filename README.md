@@ -15,3 +15,6 @@ make
 ```bash
 ./my_sokoban map
 ```
+## Demo
+
+![](demo.gif)
