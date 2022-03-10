@@ -12,6 +12,7 @@ SRC	=	map_manager.c	\
 		move_player.c	\
 		victory_loose.c	\
 		get_element.c	\
+		game_error.c	\
 
 OBJ	=	$(MAIN:.c=.o) $(SRC:.c=.o)
 

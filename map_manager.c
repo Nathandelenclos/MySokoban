@@ -96,7 +96,8 @@ void display(data *d)
     clear();
     for (int i = 0; d->map[i] != NULL; ++i) {
         printw(d->map[i]);
-        printw("\n");
+        if (d->map[i + 1] != NULL)
+            printw("\n");
     }
     refresh();
 }

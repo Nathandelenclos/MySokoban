@@ -60,13 +60,14 @@ int help(int argc, char **argv)
 
 int main(int ac, char **av, char **env)
 {
+    int ret = 0;
     data *d = malloc(sizeof(data));
     if (help(ac, av))
         return 0;
     initscr();
     keypad(stdscr, TRUE);
     char *map = file_to_str(av[1]);
-    if (map == NULL || check_char(map))
+    if (map == NULL || check_char(map) || check_hole(map))
         return 84;
     d->map = char_to_array(map);
     d->default_map = char_to_array(map);
@@ -74,7 +75,7 @@ int main(int ac, char **av, char **env)
     d->holes = get_holes(d);
     while (check_screen(d->map));
     display(d);
-    manage_key(d);
+    ret = manage_key(d);
     endwin();
-    return 0;
+    return ret;
 }

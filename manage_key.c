@@ -10,21 +10,17 @@
 #include "include/my.h"
 #include "stdlib.h"
 
-void manage_key(data *d)
+int manage_key(data *d)
 {
     while (check_screen(d->map));
     int c = getch();
     move_player(d, c);
-    switch (c) {
-    case 'q':
-        return;
-    case ' ':
+    if (c == ' ')
         regen_map(d);
-    }
     display(d);
     if (victory_check(d))
-        return;
-    if (loose_check(d))
-        return;
-    manage_key(d);
+        return 0;
+    else if (loose_check(d))
+        return 1;
+    return manage_key(d);
 }

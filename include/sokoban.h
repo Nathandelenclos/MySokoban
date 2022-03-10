@@ -26,7 +26,7 @@ char *file_to_str(char *filename);
 void display(data *d);
 char **char_to_array(char *map);
 int *get_player_coord(data *d);
-void manage_key(data *d);
+int manage_key(data *d);
 void regen_map(data *d);
 void move_player(data *d, int c);
 int *create_coord(int y, int x);
@@ -36,4 +36,6 @@ int victory_check(data *d);
 int loose_check(data *d);
 int check_char(char *map);
 int check_screen(char **tab);
+int check_hole(char *map);
+
 #endif
