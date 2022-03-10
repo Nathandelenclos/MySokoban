@@ -23,7 +23,7 @@ char *file_to_str(char *filename)
     int size = 0;
 
     if (fd1 < 0 || errno == 2) {
-        my_error("File can't open");
+        my_error("File can't open\n");
         return NULL;
     }
     stat(filename, &st);
@@ -35,7 +35,7 @@ char *file_to_str(char *filename)
     }
     data[size] = '\0';
     if (close(fd1) < 0 || errno == 2) {
-        my_error("File can't close");
+        my_error("File can't close\n");
         return NULL;
     }
     return data;
@@ -84,7 +84,7 @@ int check_char(char *map)
             str[0] = map[i];
             my_error("Invalid map: char '");
             my_error(str);
-            my_error("' is banned.");
+            my_error("' is banned.\n");
             return 1;
         }
     }

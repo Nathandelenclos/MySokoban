@@ -34,9 +34,9 @@ int check_screen(char **tab)
     int column = 0;
     for (int i = 0; tab[i] != NULL; ++i)
         column++;
-    if (LINES < line || COLS < column) {
+    if (LINES < (line - 2) || COLS < column) {
         clear();
-        char *message= "Please increase the size of the terminal";
+        char *message= "Please resize your window";
         mvprintw(LINES / 2, (COLS / 2) - my_strlen(message) / 2,
             message);
         refresh();
