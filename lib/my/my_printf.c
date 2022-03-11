@@ -26,7 +26,7 @@ void print_arg(char *string, int i, va_list vaList)
     switch (string[i + 1]) {
     case 's':
         my_putstr((char *) va_arg(vaList,
-        char*));
+        char *));
         break;
     case 'c' | 'C':
         my_putchar((int) va_arg(vaList,

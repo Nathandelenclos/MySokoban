@@ -1,9 +1,4 @@
-/*
-** EPITECH PROJECT, 2021
-** Sokoban
-** File description:
-** main
-*/
+
 
 #include <ncurses.h>
 #include "include/sokoban.h"
@@ -79,3 +74,4 @@ int main(int ac, char **av, char **env)
     endwin();
     return ret;
 }
+
