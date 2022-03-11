@@ -8,7 +8,7 @@
 #include "./list.h"
 
 #ifndef SOKOBAN_H
-	#define SOKOBAN_H
+    #define SOKOBAN_H
 
 typedef struct crate_s {
     int *coord;

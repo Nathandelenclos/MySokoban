@@ -12,7 +12,7 @@
 
 int *create_coord(int y, int x)
 {
-    int *coord = malloc(sizeof(int ) * 3);
+    int *coord = malloc(sizeof(int) * 3);
     coord[0] = y;
     coord[1] = x;
     coord[2] = 0;
@@ -36,7 +36,7 @@ int check_screen(char **tab)
         column++;
     if (LINES < (line) || COLS < column) {
         clear();
-        char *message= "Please resize your window";
+        char *message = "Please resize your window";
         mvprintw(LINES / 2, (COLS / 2) - my_strlen(message) / 2,
             message);
         refresh();
@@ -47,12 +47,14 @@ int check_screen(char **tab)
 
 int help(int argc, char **argv)
 {
-    if (argc > 1 && my_strcmp(argv[1], "-h")){
+    if (argc > 1 && my_strcmp(argv[1], "-h")) {
         my_printf("USAGE\n"
                   "\t./my_sokoban map\n"
                   "DESCRIPTION\n"
-                  "\tmap file representing the warehouse map, containing ‘#’ for walls,\n"
-                  "\t\t‘P’ for the player, ‘X’ for boxes and ‘O’ for storage locations.\n");
+                  "\tmap file representing the warehouse map, "
+                  "containing ‘#’ for walls,\n"
+                  "\t\t‘P’ for the player, ‘X’ for boxes and "
+                  "‘O’ for storage locations.\n");
         return 1;
     }
     return 0;

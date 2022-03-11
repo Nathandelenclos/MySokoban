@@ -6,7 +6,7 @@
 */
 
 #ifndef MY_H
-#define MY_H
+	#define MY_H
 
 int my_printf(char *str, ...);
 char *my_strdup(char *str);

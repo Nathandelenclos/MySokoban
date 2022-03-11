@@ -22,8 +22,3 @@ int check_hole(char *map)
         return 1;
     return 0;
 }
-
-int game_error(data *d)
-{
-    return 0;
-}

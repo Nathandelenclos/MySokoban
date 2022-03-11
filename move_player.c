@@ -25,6 +25,7 @@ void player_move_down(data *d)
         break;
     }
 }
+
 void player_move_up(data *d)
 {
     switch (d->map[d->p_coord[0] - 1][d->p_coord[1]]) {
@@ -40,6 +41,7 @@ void player_move_up(data *d)
         break;
     }
 }
+
 void player_move_left(data *d)
 {
     switch (d->map[d->p_coord[0]][d->p_coord[1] - 1]) {
@@ -55,6 +57,7 @@ void player_move_left(data *d)
         break;
     }
 }
+
 void player_move_right(data *d)
 {
     switch (d->map[d->p_coord[0]][d->p_coord[1] + 1]) {
